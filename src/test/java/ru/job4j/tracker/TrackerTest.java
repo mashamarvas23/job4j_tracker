@@ -8,7 +8,7 @@ public class TrackerTest {
     public void whenAddNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
         Item item = new Item();
-        item.setName("test1");
+        item.setName("test11");
         tracker.add(item);
         Item result = tracker.findById(item.getId());
         assertThat(result.getName()).isEqualTo(item.getName());
