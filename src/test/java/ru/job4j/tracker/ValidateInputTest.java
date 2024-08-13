@@ -31,7 +31,7 @@ class ValidateInputTest {
     void whenMultipleValidInput() {
         Output output = new StubOutput();
         Input in = new MockInput(
-                new String[]{"1","2"}
+                new String[]{"1", "2"}
         );
         ValidateInput input = new ValidateInput(output, in);
         int selectedFirst = input.askInt("Enter menu:");
