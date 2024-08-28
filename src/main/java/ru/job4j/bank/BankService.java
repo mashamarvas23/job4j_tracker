@@ -6,12 +6,11 @@ public class BankService {
     private final Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-
         users.putIfAbsent(user, new ArrayList<>());
     }
 
     public void deleteUser(String passport) {
-        users.remove(findByPassport(passport));
+        users.remove(new User(passport, ""));
     }
 
     public void addAccount(String passport, Account account) {
@@ -52,7 +51,7 @@ public class BankService {
         if (Objects.nonNull(destAccount) && Objects.nonNull(sourceAccount) && sourceAccount.getBalance() >= amount) {
             sourceAccount.setBalance(sourceAccount.getBalance() - amount);
             destAccount.setBalance(destAccount.getBalance() + amount);
-            return true;
+            result = true;
         }
         return result;
 
