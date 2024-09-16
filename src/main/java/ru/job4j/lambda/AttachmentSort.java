@@ -17,7 +17,6 @@ public class AttachmentSort {
                 return Integer.compare(o1.getSize(), o2.getSize());
             }
         };
-
         attachments.sort(comparator);
         System.out.println(attachments);
 
